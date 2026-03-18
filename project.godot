@@ -30,4 +30,5 @@ common/physics_interpolation=true
 
 [rendering]
 
+environment/screen_space_reflection/half_size=false
 anti_aliasing/quality/use_taa=true
