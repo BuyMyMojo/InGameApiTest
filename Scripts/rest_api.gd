@@ -1,6 +1,5 @@
 extends Node3D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CLog.o("API handler active")
@@ -27,11 +26,10 @@ func _on_rest_api_handler_get_requested(endpoint: String, params: Dictionary, re
 				"menu_context" : null,
 			}
 			response.send(200, JSON.stringify(output, "", false), "application/json")
-	var output = []
-	
-	#CLog.o
-	
-	pass # Replace with function body.
+		"/player/info":
+			pass
+		"/player/location":
+			response.send(200, JSON.stringify(GameQuery.get_player_location(), "", false), "application/json")
 
 
 func _on_rest_http_server_no_handler_found(request: RESTHttpRequest, response: RESTHttpResponse) -> void:

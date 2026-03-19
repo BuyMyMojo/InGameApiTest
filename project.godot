@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalKeybinds="*uid://t03ejg8oxiak"
+GameQuery="*uid://blrjm5es5r4na"
 
 [display]
 
