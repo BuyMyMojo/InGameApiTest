@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dbxuty286fhqh"]
+
+[ext_resource type="Script" uid="uid://bqyh75xbvstxt" path="res://addons/rest_api_server/godottpd/http_server.gd" id="1_banv7"]
+[ext_resource type="Script" uid="uid://cdbki3llchloy" path="res://Scripts/rest_api.gd" id="1_cadjc"]
+[ext_resource type="Script" uid="uid://geghdbjfhklp" path="res://addons/rest_api_server/api/api_handler.gd" id="2_cadjc"]
+
+[node name="RestApi" type="Node3D" unique_id=293433970]
+script = ExtResource("1_cadjc")
+
+[node name="RESTHttpServer" type="Node" parent="." unique_id=1383740525]
+script = ExtResource("1_banv7")
+auto_start = true
+enable_debug = true
+metadata/_custom_type_script = "uid://bqyh75xbvstxt"
+
+[node name="RESTApiHandler" type="Node" parent="RESTHttpServer" unique_id=1204141756]
+script = ExtResource("2_cadjc")
+path_prefix = "/api"
+endpoints = Array[String](["/state", "", "/"])
+metadata/_custom_type_script = "uid://geghdbjfhklp"
+
+[connection signal="no_handler_found" from="RESTHttpServer" to="." method="_on_rest_http_server_no_handler_found"]
+[connection signal="get_requested" from="RESTHttpServer/RESTApiHandler" to="." method="_on_rest_api_handler_get_requested"]

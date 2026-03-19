@@ -22,7 +22,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/appimage_export_plugin/plugin.cfg", "res://addons/nap_map_generator/plugin.cfg", "res://addons/rest_api_server/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/appimage_export_plugin/plugin.cfg", "res://addons/clog/plugin.cfg", "res://addons/nap_map_generator/plugin.cfg", "res://addons/rest_api_server/plugin.cfg")
 
 [input]
 

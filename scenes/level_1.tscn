@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxwhskbhdia2b"]
 
+[ext_resource type="PackedScene" uid="uid://dbxuty286fhqh" path="res://scenes/REST_API.tscn" id="1_4nkto"]
 [ext_resource type="Script" uid="uid://beceid0ng71h3" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_5xbjy"]
 [ext_resource type="Material" uid="uid://c4d6w8t484io8" path="res://Materials/floor.tres" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_4nkto"]
@@ -67,6 +68,8 @@ subdivide_depth = 32
 orientation = 1
 
 [node name="Level1" type="Node3D" unique_id=1338532141]
+
+[node name="RestApi" parent="." unique_id=293433970 instance=ExtResource("1_4nkto")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2020586806]
 environment = SubResource("Environment_5xbjy")

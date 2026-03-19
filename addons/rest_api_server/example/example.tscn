@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpn4rmx6kjoqx"]
+[gd_scene format=3 uid="uid://bpn4rmx6kjoqx"]
 
 [ext_resource type="PackedScene" uid="uid://cxknv74k0ti8d" path="res://addons/rest_api_server/api/rest_http_server.tscn" id="1_8rgmi"]
 [ext_resource type="Script" uid="uid://501cd65edw0o" path="res://addons/rest_api_server/example/example.gd" id="1_rbrdk"]
@@ -17,7 +17,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Example" type="Control"]
+[node name="Example" type="Control" unique_id=1186954611]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,25 +26,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rbrdk")
 
-[node name="RESTHttpServer" parent="." instance=ExtResource("1_8rgmi")]
+[node name="RESTHttpServer" parent="." unique_id=861495715 instance=ExtResource("1_8rgmi")]
 auto_start = true
 
-[node name="IndexHandler" type="Node" parent="RESTHttpServer"]
+[node name="IndexHandler" type="Node" parent="RESTHttpServer" unique_id=298990804]
 script = ExtResource("3_i1urc")
 path_prefix = ""
 endpoints = Array[String](["", "/"])
 metadata/_custom_type_script = "uid://geghdbjfhklp"
 
-[node name="APIHandler_v1" parent="RESTHttpServer" instance=ExtResource("3_rbrdk")]
+[node name="APIHandler_v1" parent="RESTHttpServer" unique_id=1479251253 instance=ExtResource("3_rbrdk")]
 endpoints = Array[String](["", "/", "/users", "/users/:username"])
 
-[node name="APIHandler_v2" parent="RESTHttpServer" instance=ExtResource("3_rbrdk")]
+[node name="APIHandler_v2" parent="RESTHttpServer" unique_id=208051152 instance=ExtResource("3_rbrdk")]
 path_prefix = "/api/v2"
 endpoints = Array[String](["/users", "/users/:username", "/users/:username/:property"])
 
-[node name="HTTPRequestClient" type="HTTPRequest" parent="."]
+[node name="HTTPRequestClient" type="HTTPRequest" parent="." unique_id=328235241]
 
-[node name="LabelDescription" type="Label" parent="."]
+[node name="LabelDescription" type="Label" parent="." unique_id=1449140539]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -62,7 +62,7 @@ This is just one possible usage. You can have multiple handlers in the same API 
 The actual impact of using several handlers is to organize the Godot signals emitted: endpoints handled by a single API handler will go through the same signal."
 autowrap_mode = 3
 
-[node name="PanelInstructions" type="Panel" parent="."]
+[node name="PanelInstructions" type="Panel" parent="." unique_id=1922668147]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -74,7 +74,7 @@ offset_bottom = 474.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rbrdk")
 
-[node name="Label" type="RichTextLabel" parent="PanelInstructions"]
+[node name="Label" type="RichTextLabel" parent="PanelInstructions" unique_id=1617466183]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -101,7 +101,7 @@ to generate one during development.
 
 You should use standard certificate generation methods for production."
 
-[node name="Label2" type="Label" parent="PanelInstructions"]
+[node name="Label2" type="Label" parent="PanelInstructions" unique_id=89992524]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
@@ -110,14 +110,14 @@ offset_bottom = 30.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "To test the example:"
 
-[node name="PanelUsers" type="Panel" parent="."]
+[node name="PanelUsers" type="Panel" parent="." unique_id=2090996708]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 461.0
 offset_bottom = 535.0
 
-[node name="Label" type="Label" parent="PanelUsers"]
+[node name="Label" type="Label" parent="PanelUsers" unique_id=737614641]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 3.0
@@ -126,7 +126,7 @@ offset_bottom = 20.0
 theme_override_font_sizes/font_size = 12
 text = "User database (JSON)"
 
-[node name="TextEditUsers" type="TextEdit" parent="PanelUsers"]
+[node name="TextEditUsers" type="TextEdit" parent="PanelUsers" unique_id=777454622]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,7 +157,7 @@ text = "{
     }
 }"
 
-[node name="BtnReload" type="Button" parent="PanelUsers"]
+[node name="BtnReload" type="Button" parent="PanelUsers" unique_id=819592592]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -171,14 +171,14 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Reload database"
 
-[node name="PanelClient" type="Panel" parent="."]
+[node name="PanelClient" type="Panel" parent="." unique_id=1016923352]
 layout_mode = 0
 offset_left = 488.0
 offset_top = 21.0
 offset_right = 833.0
 offset_bottom = 532.0
 
-[node name="Label" type="Label" parent="PanelClient"]
+[node name="Label" type="Label" parent="PanelClient" unique_id=654650181]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 6.0
@@ -187,7 +187,7 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 12
 text = "HTTPRequest client (used to test v2)"
 
-[node name="EditServer" type="LineEdit" parent="PanelClient"]
+[node name="EditServer" type="LineEdit" parent="PanelClient" unique_id=1024128964]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 64.0
@@ -196,7 +196,7 @@ offset_bottom = 95.0
 text = "http://127.0.0.1:8080"
 placeholder_text = "Server address, without path"
 
-[node name="Label" type="Label" parent="PanelClient/EditServer"]
+[node name="Label" type="Label" parent="PanelClient/EditServer" unique_id=1524413342]
 layout_mode = 0
 offset_top = -19.0
 offset_right = 256.0
@@ -204,7 +204,7 @@ offset_bottom = -2.0
 theme_override_font_sizes/font_size = 12
 text = "Server address (with protocol, without path)"
 
-[node name="EditPath" type="LineEdit" parent="PanelClient"]
+[node name="EditPath" type="LineEdit" parent="PanelClient" unique_id=1977621395]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 136.0
@@ -213,7 +213,7 @@ offset_bottom = 167.0
 text = "/api/v2/users"
 placeholder_text = "API endpoint, full path"
 
-[node name="Label" type="Label" parent="PanelClient/EditPath"]
+[node name="Label" type="Label" parent="PanelClient/EditPath" unique_id=1375149645]
 layout_mode = 0
 offset_top = -19.0
 offset_right = 256.0
@@ -221,7 +221,8 @@ offset_bottom = -2.0
 theme_override_font_sizes/font_size = 12
 text = "API endpoint (full path)"
 
-[node name="Label2" type="Label" parent="PanelClient"]
+[node name="Label2" type="Label" parent="PanelClient" unique_id=203975296]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 184.0
 offset_right = 279.0
@@ -232,7 +233,7 @@ text = "Data to send (PUT, POST)
 or data read (from GET)
 or response body (from DELETE)"
 
-[node name="EditContent" type="TextEdit" parent="PanelClient"]
+[node name="EditContent" type="TextEdit" parent="PanelClient" unique_id=657632948]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 231.0
@@ -242,7 +243,7 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.203922)
 theme_override_font_sizes/font_size = 12
 placeholder_text = "(empty)"
 
-[node name="BtnClientGet" type="Button" parent="PanelClient"]
+[node name="BtnClientGet" type="Button" parent="PanelClient" unique_id=731150355]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 470.0
@@ -251,7 +252,7 @@ offset_bottom = 501.0
 focus_mode = 0
 text = "GET"
 
-[node name="BtnClientPut" type="Button" parent="PanelClient"]
+[node name="BtnClientPut" type="Button" parent="PanelClient" unique_id=1510046386]
 layout_mode = 0
 offset_left = 95.0
 offset_top = 470.0
@@ -260,7 +261,7 @@ offset_bottom = 501.0
 focus_mode = 0
 text = "PUT"
 
-[node name="BtnClientPost" type="Button" parent="PanelClient"]
+[node name="BtnClientPost" type="Button" parent="PanelClient" unique_id=1044568489]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 470.0
@@ -269,7 +270,7 @@ offset_bottom = 501.0
 focus_mode = 0
 text = "POST"
 
-[node name="BtnClientDelete" type="Button" parent="PanelClient"]
+[node name="BtnClientDelete" type="Button" parent="PanelClient" unique_id=91008281]
 layout_mode = 0
 offset_left = 255.0
 offset_top = 470.0
