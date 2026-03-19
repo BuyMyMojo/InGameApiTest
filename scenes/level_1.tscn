@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cxwhskbhdia2b"]
 
+[ext_resource type="Script" uid="uid://beceid0ng71h3" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_5xbjy"]
 [ext_resource type="Material" uid="uid://c4d6w8t484io8" path="res://Materials/floor.tres" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_4nkto"]
 [ext_resource type="Shader" uid="uid://d07q7jv61r1bh" path="res://Shaders/water.gdshader" id="2_bswci"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
@@ -21,6 +23,8 @@ ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_density = 0.001
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fcfvj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4nkto"]
 size = Vector3(128, 1, 128)
@@ -70,6 +74,22 @@ environment = SubResource("Environment_5xbjy")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1104544909]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 19.31662, 0)
 shadow_enabled = true
+
+[node name="Basic FPS Player" type="CharacterBody3D" parent="." unique_id=1226024854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.523273, 0)
+script = ExtResource("1_5xbjy")
+MOUSE_ACCEL = false
+KEY_BIND_UP = "move_forward"
+KEY_BIND_LEFT = "move_left"
+KEY_BIND_RIGHT = "move_right"
+KEY_BIND_DOWN = "move_back"
+KEY_BIND_JUMP = "jump"
+metadata/_custom_type_script = "uid://beceid0ng71h3"
+
+[node name="Head" type="Node3D" parent="Basic FPS Player" unique_id=1725352338 instance=ExtResource("2_4nkto")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player" unique_id=616235082]
+shape = SubResource("CapsuleShape3D_fcfvj")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=2033958099]
 
